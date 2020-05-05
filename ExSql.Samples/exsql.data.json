@@ -1,0 +1,32 @@
+{
+  //SQL命令脚本
+  "ExSqlCmds": [
+    {
+      "Name": "Samples.DeleteUser",
+      "PreSQL": "DELETE FROM sys_user WHERE UserId = ?"
+    },
+    {
+      "Name": "Samples.ViewUser",
+      "PreSQL": "SELECT * FROM  view_user"
+    }
+  ],
+  //存储过程自动生成配置
+  "EnableProcs": false,
+  //存储过程脚本
+  "ExSqlProcs": [
+    {
+      "Name": "Samples.ProcDeleteUser",
+      "PreSQL": "DELETE FROM sys_user WHERE @UserID = ?"
+    }
+  ],
+  //数据视图自动生成配置
+  "EnableViews": true,
+  //数据视图脚本
+  "ExSqlViews": [
+    {
+      "Name": "view_user",
+      "Entity": "ExSql.Samples.ViewUser",
+      "PreSQL": "CREATE VIEW view_user AS SELECT * FROM sys_user"
+    }
+  ]
+}
